@@ -40,8 +40,8 @@ const ContactSection = () => {
 
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'rithika2k2005@gmail.com', href: 'mailto:rithika2k2005@gmail.com' },
-    { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-    { icon: MapPin, label: 'Location', value: 'Your City, Country', href: null },
+    { icon: Phone, label: 'Phone', value: '+91 78240 10304', href: 'tel:+917824010304' },
+    { icon: MapPin, label: 'Location', value: 'Jayankondam, Tamil Nadu, India', href: null },
   ];
 
   return (
@@ -187,8 +187,11 @@ const ContactSection = () => {
                   <Button
                     className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 glow-effect"
                     size="lg"
+                    asChild
                   >
-                    Download PDF
+                    <a href="/resume.pdf" download="Rithika_Umasankar_Resume.pdf">
+                      Download PDF
+                    </a>
                   </Button>
                 </CardContent>
               </Card>

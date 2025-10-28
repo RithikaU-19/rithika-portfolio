@@ -7,7 +7,7 @@ const AboutSection = () => {
     { icon: Code2, name: 'Frontend', items: ['HTML', 'CSS', 'React'] },
     { icon: Terminal, name: 'Backend', items: ['Java', 'C'] },
     { icon: Database, name: 'Database', items: ['MySQL', 'SQL'] },
-    { icon: Palette, name: 'Design', items: ['UI/UX', 'Responsive Design'] },
+    { icon: Palette, name: 'Version Control', items: ['Git', 'GitHub'] },
   ];
 
   const containerVariants = {

@@ -5,35 +5,24 @@ import { Card, CardContent } from '@/components/ui/card';
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: 'Full Stack Development',
+      title: 'Web Technologies',
       skills: [
-        { name: 'React & Frontend', level: 85 },
-        { name: 'Java Backend', level: 80 },
-        { name: 'Database Design', level: 75 },
+        { name: 'HTML', level: 75 },
+        { name: 'CSS', level: 50 },
+        { name: 'JavaScript', level: 75 },
       ],
     },
     {
-      title: 'Backend Development',
+      title: 'Programming Languages',
       skills: [
-        { name: 'Java', level: 85 },
-        { name: 'C Programming', level: 80 },
-        { name: 'API Development', level: 75 },
+        { name: 'Java', level: 90 },
+        { name: 'C', level: 70 },
       ],
     },
     {
-      title: 'Frontend Development',
+      title: 'Tools',
       skills: [
-        { name: 'HTML & CSS', level: 90 },
-        { name: 'JavaScript', level: 85 },
-        { name: 'Responsive Design', level: 90 },
-      ],
-    },
-    {
-      title: 'Database Management',
-      skills: [
-        { name: 'MySQL', level: 85 },
-        { name: 'SQL Queries', level: 90 },
-        { name: 'Database Optimization', level: 75 },
+        { name: 'Git and GitHub', level: 75 },
       ],
     },
   ];
@@ -79,7 +68,7 @@ const SkillsSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto"
+          className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
         >
           {skillCategories.map((category, categoryIndex) => (
             <motion.div key={categoryIndex} variants={itemVariants}>

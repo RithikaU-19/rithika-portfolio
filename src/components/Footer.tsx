@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold gradient-text mb-4">Rithika.dev</h3>
+            <h3 className="text-2xl font-bold gradient-text mb-4">Rithika</h3>
             <p className="text-muted-foreground">
               Building the future, one line of code at a time.
             </p>

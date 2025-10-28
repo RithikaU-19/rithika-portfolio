@@ -7,25 +7,32 @@ import { Button } from '@/components/ui/button';
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with payment integration and real-time inventory management.',
-      tech: ['React', 'Java', 'MySQL'],
-      github: 'https://github.com',
+      title: 'Event Management System',
+      description: 'A comprehensive event management system for organizing and managing events efficiently.',
+      tech: ['HTML', 'CSS', 'PHP', 'MySQL'],
+      github: 'https://github.com/RithikaU-19/Event-Management-System',
       gradient: 'from-primary to-secondary',
     },
     {
-      title: 'Task Management System',
-      description: 'Collaborative task management app with real-time updates and team collaboration features.',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      github: 'https://github.com',
+      title: 'Library Management System',
+      description: 'A complete library management solution for tracking books, members, and transactions.',
+      tech: ['HTML', 'CSS', 'PHP', 'MySQL'],
+      github: 'https://github.com/RithikaU-19/Library-Management-System',
       gradient: 'from-secondary to-accent',
     },
     {
-      title: 'Portfolio Analytics',
-      description: 'Analytics dashboard for tracking portfolio performance with interactive charts and insights.',
-      tech: ['React', 'MySQL', 'Java'],
-      github: 'https://github.com',
+      title: 'Online Voting System',
+      description: 'A secure online voting platform with authentication and real-time vote counting.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'MySQL', 'PHP'],
+      github: 'https://github.com/RithikaU-19/Online-Voting-System',
       gradient: 'from-accent to-primary',
+    },
+    {
+      title: 'Temperature Converter',
+      description: 'An interactive temperature converter tool supporting Celsius, Fahrenheit, and Kelvin.',
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      github: 'https://github.com/RithikaU-19/SCT_SD_1',
+      gradient: 'from-primary to-accent',
     },
   ];
 
@@ -58,7 +65,7 @@ const ProjectsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4">Featured Projects</h2>
+          <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4">Projects</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full" />
           <p className="text-xl text-muted-foreground mt-6">
             Some of my recent work and side projects
@@ -92,27 +99,17 @@ const ProjectsSection = () => {
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex gap-3">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                      asChild
-                    >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github size={16} className="mr-2" />
-                        Source
-                      </a>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex-1 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-                    >
-                      <ExternalLink size={16} className="mr-2" />
-                      Demo
-                    </Button>
-                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    asChild
+                  >
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github size={16} className="mr-2" />
+                      View Source
+                    </a>
+                  </Button>
                 </CardContent>
               </Card>
             </motion.div>

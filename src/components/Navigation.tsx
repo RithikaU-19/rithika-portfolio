@@ -46,7 +46,7 @@ const Navigation = () => {
             className="text-2xl font-bold gradient-text cursor-pointer"
             onClick={() => scrollToSection('#home')}
           >
-            Rithika.dev
+            Rithika
           </motion.div>
 
           {/* Desktop Navigation */}
