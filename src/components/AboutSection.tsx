@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const AboutSection = () => {
   const skills = [
-    { icon: Code2, name: 'Frontend', items: ['HTML', 'CSS', 'React'] },
+    { icon: Code2, name: 'Frontend', items: ['HTML', 'CSS', 'JavaScript'] },
     { icon: Terminal, name: 'Backend', items: ['Java', 'C'] },
     { icon: Database, name: 'Database', items: ['MySQL', 'SQL'] },
     { icon: Palette, name: 'Version Control', items: ['Git', 'GitHub'] },

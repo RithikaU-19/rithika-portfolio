@@ -1,43 +1,9 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: 'Message Sent!',
-        description: "Thanks for reaching out! I'll get back to you soon.",
-      });
-      setFormData({ name: '', email: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'rithika2k2005@gmail.com', href: 'mailto:rithika2k2005@gmail.com' },
     { icon: Phone, label: 'Phone', value: '+91 78240 10304', href: 'tel:+917824010304' },
@@ -63,81 +29,14 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <Card className="glass-card">
-              <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Name
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="bg-muted/50 border-border focus:border-primary transition-colors"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="bg-muted/50 border-border focus:border-primary transition-colors"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Message
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="bg-muted/50 border-border focus:border-primary transition-colors resize-none"
-                      placeholder="Your message..."
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 glow-effect text-lg py-6"
-                  >
-                    <Send className="mr-2" size={20} />
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </motion.div>
-
+        <div className="max-w-4xl mx-auto">
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="grid md:grid-cols-3 gap-6 mb-8"
           >
             {contactInfo.map((info, index) => (
               <motion.div
@@ -171,31 +70,32 @@ const ContactSection = () => {
                 </Card>
               </motion.div>
             ))}
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <Card className="glass-card">
-                <CardContent className="p-8 text-center">
-                  <h3 className="text-2xl font-bold gradient-text mb-4">Download Resume</h3>
-                  <p className="text-muted-foreground mb-6">
-                    Get a comprehensive overview of my experience and skills
-                  </p>
-                  <Button
-                    className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 glow-effect"
-                    size="lg"
-                    asChild
-                  >
-                    <a href="/resume.pdf" download="Rithika_Umasankar_Resume.pdf">
-                      Download PDF
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            viewport={{ once: true }}
+            className="max-w-md mx-auto"
+          >
+            <Card className="glass-card">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-2xl font-bold gradient-text mb-4">Download Resume</h3>
+                <p className="text-muted-foreground mb-6">
+                  Get a comprehensive overview of my experience and skills
+                </p>
+                <Button
+                  className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 glow-effect"
+                  size="lg"
+                  asChild
+                >
+                  <a href="/resume.pdf" download="Rithika_Umasankar_Resume.pdf">
+                    Download PDF
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </div>

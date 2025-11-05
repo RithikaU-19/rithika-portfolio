@@ -7,7 +7,7 @@ import FloatingShape from './FloatingShape';
 
 const HeroSection = () => {
   const [currentRole, setCurrentRole] = useState(0);
-  const roles = ["I'm a Tech Enthusiast", "I'm a Problem Solver"];
+  const roles = ["I'm a Software Developer", "I'm a Tech Enthusiast", "I'm a Problem Solver"];
 
   useEffect(() => {
     const interval = setInterval(() => {
