@@ -107,7 +107,12 @@ const CertificationsSection = () => {
                     className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                     asChild
                   >
-                    <a href={cert.file} target="_blank" rel="noopener noreferrer">
+                    <a 
+                      href={cert.file} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      download
+                    >
                       <Download size={16} className="mr-2" />
                       View Certificate
                     </a>
