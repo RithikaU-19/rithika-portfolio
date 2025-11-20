@@ -57,12 +57,12 @@ const ContactSection = () => {
                         {info.href ? (
                           <a
                             href={info.href}
-                            className="text-lg font-semibold gradient-text hover:underline"
+                            className="text-lg font-semibold gradient-text hover:underline break-all"
                           >
                             {info.value}
                           </a>
                         ) : (
-                          <p className="text-lg font-semibold gradient-text">{info.value}</p>
+                          <p className="text-lg font-semibold gradient-text break-words">{info.value}</p>
                         )}
                       </div>
                     </div>
