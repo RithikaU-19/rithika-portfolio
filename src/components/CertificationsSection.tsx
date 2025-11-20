@@ -12,10 +12,10 @@ const CertificationsSection = () => {
       issuer: 'SkillCraft Technology',
     },
     {
-      title: 'Generative AI',
-      subtitle: 'Certificate of Completion',
-      file: '/certificates/guvi-generative-ai.pdf',
-      issuer: 'GUVI',
+      title: 'Microsoft Azure',
+      subtitle: 'Global Certification',
+      file: '/certificates/azure-global-certification.pdf',
+      issuer: 'Microsoft',
     },
     {
       title: 'Introduction to Internet of Things',
