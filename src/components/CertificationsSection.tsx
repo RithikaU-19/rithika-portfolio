@@ -1,38 +1,61 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+
+type Certification = {
+  title: string;
+  subtitle: string;
+  file: string;
+  preview: string;
+  issuer: string;
+};
 
 const CertificationsSection = () => {
-  const certifications = [
+  const [selectedCertificate, setSelectedCertificate] = useState<Certification | null>(null);
+
+  const certifications: Certification[] = [
     {
       title: 'SkillCraft Technology',
       subtitle: 'Letter of Recommendation',
       file: '/certificates/skillcraft-recommendation.pdf',
+      preview: '/certificates/skillcraft-recommendation-preview.png',
       issuer: 'SkillCraft Technology',
     },
     {
       title: 'Microsoft Azure',
       subtitle: 'Global Certification',
       file: '/certificates/azure-global-certification.pdf',
+      preview: '/certificates/azure-global-certification-preview.png',
       issuer: 'Microsoft',
     },
     {
       title: 'Introduction to Internet of Things',
       subtitle: 'NPTEL Certification',
       file: '/certificates/nptel-iot.pdf',
+      preview: '/certificates/nptel-iot-preview.png',
       issuer: 'NPTEL',
     },
     {
       title: 'Cloud Computing',
       subtitle: 'NPTEL Certification',
       file: '/certificates/nptel-cloud-computing.pdf',
+      preview: '/certificates/nptel-cloud-computing-preview.png',
       issuer: 'NPTEL',
     },
     {
       title: 'Java Programming',
       subtitle: 'Course Completion',
       file: '/certificates/udemy-java.pdf',
+      preview: '/certificates/udemy-java-preview.png',
       issuer: 'Udemy',
     },
   ];
@@ -105,15 +128,11 @@ const CertificationsSection = () => {
                   <Button
                     variant="outline"
                     className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                    asChild
+                    onClick={() => setSelectedCertificate(cert)}
                   >
-                    <a 
-                      href={cert.file} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
+                    <span>
                       View Certificate
-                    </a>
+                    </span>
                   </Button>
                 </CardContent>
               </Card>
@@ -121,6 +140,34 @@ const CertificationsSection = () => {
           ))}
         </motion.div>
       </div>
+
+      <Dialog
+        open={selectedCertificate !== null}
+        onOpenChange={(open) => {
+          if (!open) setSelectedCertificate(null);
+        }}
+      >
+        <DialogContent className="w-[calc(100%-2rem)] max-w-5xl gap-0 overflow-hidden p-0">
+          <DialogHeader className="border-b border-border px-6 py-4 pr-12">
+            <DialogTitle className="gradient-text">
+              {selectedCertificate?.title}
+            </DialogTitle>
+            <DialogDescription>
+              {selectedCertificate?.subtitle} · {selectedCertificate?.issuer}
+            </DialogDescription>
+          </DialogHeader>
+          {selectedCertificate && (
+            <div className="flex h-[70vh] min-h-[420px] items-center justify-center overflow-auto bg-muted p-2 sm:p-4">
+              <img
+                src={selectedCertificate.preview}
+                title={`${selectedCertificate.title} certificate preview`}
+                alt={`${selectedCertificate.title} certificate`}
+                className="max-h-full max-w-full rounded-md border border-border bg-background object-contain shadow-lg"
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* Background Gradient */}
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-gradient-to-r from-accent/20 via-primary/20 to-secondary/20 rounded-full blur-3xl -z-10" />
