@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Award, Maximize2 } from 'lucide-react';
+import { Award } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
@@ -11,10 +11,17 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 
-const CertificationsSection = () => {
-  const [selectedCertificate, setSelectedCertificate] = useState<(typeof certifications)[number] | null>(null);
+type Certification = {
+  title: string;
+  subtitle: string;
+  file: string;
+  issuer: string;
+};
 
-  const certifications = [
+const CertificationsSection = () => {
+  const [selectedCertificate, setSelectedCertificate] = useState<Certification | null>(null);
+
+  const certifications: Certification[] = [
     {
       title: 'SkillCraft Technology',
       subtitle: 'Letter of Recommendation',
