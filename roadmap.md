@@ -1,0 +1,1 @@
+- [ ] Replace blocked certificate PDF embeds with in-page image previews
