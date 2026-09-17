@@ -90,8 +90,8 @@ const ContactSection = () => {
                   size="lg"
                   asChild
                 >
-                  <a href="/resume.pdf" download="Rithika_Umasankar_Resume.pdf">
-                    Download PDF
+                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                    View Resume
                   </a>
                 </Button>
               </CardContent>

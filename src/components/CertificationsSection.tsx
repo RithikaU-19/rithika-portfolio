@@ -111,9 +111,7 @@ const CertificationsSection = () => {
                       href={cert.file} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      download
                     >
-                      <Download size={16} className="mr-2" />
                       View Certificate
                     </a>
                   </Button>
