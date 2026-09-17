@@ -81,7 +81,7 @@ const ContactSection = () => {
           >
             <Card className="glass-card">
               <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold gradient-text mb-4">Download Resume</h3>
+                <h3 className="text-2xl font-bold gradient-text mb-4">View Resume</h3>
                 <p className="text-muted-foreground mb-6">
                   Get a comprehensive overview of my experience and skills
                 </p>
