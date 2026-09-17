@@ -15,6 +15,7 @@ type Certification = {
   title: string;
   subtitle: string;
   file: string;
+  preview: string;
   issuer: string;
 };
 
@@ -26,30 +27,35 @@ const CertificationsSection = () => {
       title: 'SkillCraft Technology',
       subtitle: 'Letter of Recommendation',
       file: '/certificates/skillcraft-recommendation.pdf',
+      preview: '/certificates/skillcraft-recommendation-preview.png',
       issuer: 'SkillCraft Technology',
     },
     {
       title: 'Microsoft Azure',
       subtitle: 'Global Certification',
       file: '/certificates/azure-global-certification.pdf',
+      preview: '/certificates/azure-global-certification-preview.png',
       issuer: 'Microsoft',
     },
     {
       title: 'Introduction to Internet of Things',
       subtitle: 'NPTEL Certification',
       file: '/certificates/nptel-iot.pdf',
+      preview: '/certificates/nptel-iot-preview.png',
       issuer: 'NPTEL',
     },
     {
       title: 'Cloud Computing',
       subtitle: 'NPTEL Certification',
       file: '/certificates/nptel-cloud-computing.pdf',
+      preview: '/certificates/nptel-cloud-computing-preview.png',
       issuer: 'NPTEL',
     },
     {
       title: 'Java Programming',
       subtitle: 'Course Completion',
       file: '/certificates/udemy-java.pdf',
+      preview: '/certificates/udemy-java-preview.png',
       issuer: 'Udemy',
     },
   ];
@@ -151,20 +157,13 @@ const CertificationsSection = () => {
             </DialogDescription>
           </DialogHeader>
           {selectedCertificate && (
-            <div className="h-[70vh] min-h-[420px] bg-muted p-2 sm:p-4">
-              <iframe
-                src={`${selectedCertificate.file}#view=FitH`}
+            <div className="flex h-[70vh] min-h-[420px] items-center justify-center overflow-auto bg-muted p-2 sm:p-4">
+              <img
+                src={selectedCertificate.preview}
                 title={`${selectedCertificate.title} certificate preview`}
-                className="h-full w-full rounded-md border border-border bg-background"
+                alt={`${selectedCertificate.title} certificate`}
+                className="max-h-full max-w-full rounded-md border border-border bg-background object-contain shadow-lg"
               />
-              <a
-                href={selectedCertificate.file}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="sr-only"
-              >
-                Open certificate in a new browser tab
-              </a>
             </div>
           )}
         </DialogContent>
