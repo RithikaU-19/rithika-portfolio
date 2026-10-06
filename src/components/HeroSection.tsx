@@ -4,6 +4,7 @@ import { Download, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ParticlesBackground from './ParticlesBackground';
 import FloatingShape from './FloatingShape';
+import portrait from '@/assets/rithika-portrait.jpeg.asset.json';
 
 const HeroSection = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -36,6 +37,22 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="flex justify-center mb-8"
+          >
+            <div className="relative">
+              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-md opacity-70" />
+              <img
+                src={portrait.url}
+                alt="Rithika Umasankar"
+                className="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover object-top border-4 border-background"
+              />
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
