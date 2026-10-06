@@ -1,1 +1,3 @@
 - [x] Replace blocked certificate PDF embeds with in-page image previews
+- [x] Add Education section (B.E. CSE / HSC / SSLC) with nav link
+- [x] Add circular profile photo to hero section
