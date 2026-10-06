@@ -32,6 +32,7 @@ const ProjectsSection = () => {
       description: 'An interactive temperature converter tool supporting Celsius, Fahrenheit, and Kelvin.',
       tech: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/RithikaU-19/SCT_SD_1',
+      live: 'https://rithikau-19.github.io/Temperature-Converter/',
       gradient: 'from-primary to-accent',
     },
   ];
@@ -99,17 +100,30 @@ const ProjectsSection = () => {
                       </Badge>
                     ))}
                   </div>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                    asChild
-                  >
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github size={16} className="mr-2" />
-                      View Source
-                    </a>
-                  </Button>
+                  {project.live ? (
+                    <Button
+                      size="sm"
+                      className="w-full bg-gradient-to-r from-primary to-secondary text-primary-foreground"
+                      asChild
+                    >
+                      <a href={project.live} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink size={16} className="mr-2" />
+                        View Live
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                      asChild
+                    >
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github size={16} className="mr-2" />
+                        View Source
+                      </a>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
