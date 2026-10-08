@@ -148,6 +148,23 @@ const HeroSection = () => {
               <Mail size={24} />
             </motion.a>
           </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="flex justify-center order-1 md:order-2"
+          >
+            <div className="relative">
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-lg opacity-70" />
+              <img
+                src={portrait.url}
+                alt="Rithika Umasankar"
+                className="relative w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full object-cover object-top border-4 border-background"
+              />
+            </div>
+          </motion.div>
         </div>
       </div>
 
