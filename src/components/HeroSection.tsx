@@ -4,7 +4,7 @@ import { Download, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ParticlesBackground from './ParticlesBackground';
 import FloatingShape from './FloatingShape';
-import portrait from '@/assets/rithika-portrait.jpeg.asset.json';
+const portraitUrl = '/rithika-portrait.jpeg';
 
 const HeroSection = () => {
   const [currentRole, setCurrentRole] = useState(0);
