@@ -159,7 +159,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-lg opacity-70" />
               <img
-                src={portrait.url}
+                src={portraitUrl}
                 alt="Rithika Umasankar"
                 className="relative w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full object-cover object-top border-4 border-background"
               />
