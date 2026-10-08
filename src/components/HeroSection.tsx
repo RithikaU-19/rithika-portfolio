@@ -35,7 +35,7 @@ const HeroSection = () => {
         <FloatingShape delay={4} />
       </div>
 
-      <div className="container mx-auto px-4 z-10">
+      <div className="container mx-auto px-4 z-10 pt-20 md:pt-24">
         <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center max-w-6xl mx-auto">
           <div className="text-center md:text-left order-2 md:order-1">
 
