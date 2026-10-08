@@ -36,22 +36,8 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="flex justify-center mb-8"
-          >
-            <div className="relative">
-              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-md opacity-70" />
-              <img
-                src={portrait.url}
-                alt="Rithika Umasankar"
-                className="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover object-top border-4 border-background"
-              />
-            </div>
-          </motion.div>
+        <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center max-w-6xl mx-auto">
+          <div className="text-center md:text-left order-2 md:order-1">
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -87,7 +73,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto md:mx-0 leading-relaxed"
           >
             I'm a passionate software developer who loves turning logic into impactful solutions.
             <br />
@@ -100,7 +86,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-wrap justify-center md:justify-start gap-4 mb-12"
           >
             <Button
               size="lg"
@@ -131,7 +117,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="flex justify-center gap-6"
+            className="flex justify-center md:justify-start gap-6"
           >
             <motion.a
               whileHover={{ scale: 1.2, y: -5 }}
@@ -162,6 +148,23 @@ const HeroSection = () => {
               <Mail size={24} />
             </motion.a>
           </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="flex justify-center order-1 md:order-2"
+          >
+            <div className="relative">
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-lg opacity-70" />
+              <img
+                src={portrait.url}
+                alt="Rithika Umasankar"
+                className="relative w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full object-cover object-top border-4 border-background"
+              />
+            </div>
+          </motion.div>
         </div>
       </div>
 
@@ -170,7 +173,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
