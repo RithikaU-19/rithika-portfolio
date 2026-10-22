@@ -132,7 +132,7 @@ const HeroSection = () => {
             <motion.a
               whileHover={{ scale: 1.2, y: -5 }}
               whileTap={{ scale: 0.9 }}
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/rithikaumasankar08"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors glow-effect p-3 rounded-full glass-card"
